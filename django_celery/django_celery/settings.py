@@ -18,14 +18,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
+import os
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c^cgc2b8jwhs%vk=6#oi)1u_-%%2exslkxn4m4j=8eq=37b!rw'
+SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-c^cgc2b8jwhs%vk=6#oi)1u_-%%2exslkxn4m4j=8eq=37b!rw')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = int(os.environ.get("DEBUG", default=1))
+
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(" ")
+
 
 
 # Application definition
@@ -37,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'polls',
+    'channels',
+    'django_celery_beat',
+    'tdd',
 ]
 
 MIDDLEWARE = [
