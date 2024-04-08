@@ -1,15 +1,15 @@
 django==5.0
 celery==5.3.6
 redis==5.0.1
-flower==2.0.1
-psycopg2-binary==2.9.9
-watchfiles==0.21.0
+flower==2.0.1 #Flower is an open-source web application for monitoring and managing Celery clusters. 
+psycopg2-binary==2.9.9#Psycopg is the most popular PostgreSQL database adapter f
+watchfiles==0.21.0#Simple, modern and high performance file watching and code reload in python.
 requests==2.31.0
-daphne==4.0.0
-channels==4.0.0
+daphne==4.0.0#Daphne is a pure-Python ASGI server for UNIX, maintained by members of the Django project. It acts as the reference server for ASGI.
+channels==4.0.0 #Channels is a project that takes Django and extends its abilities beyond HTTP - to handle WebSockets, chat protocols, IoT protocols, and more. It’s
 channels-redis==4.1.0
 django-celery-beat==2.6.0
-factory-boy==3.3.0
+factory-boy==3.3.0 #factory_boy provides custom Factory subclasses for various ORMs, adding dedicated features.
 coverage==7.4.0
 pytest==7.4.4
 pytest-django==4.7.0

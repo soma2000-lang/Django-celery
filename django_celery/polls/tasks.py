@@ -80,5 +80,5 @@ def task_transaction_test():
     user = User.objects.create_user(username, 'lennon@thebeatles.com', 'johnpassword')
     user.save()
     logger.info(f'send email to {user.pk}')
-        # this cause db rollback because of transaction.atomic
+  
     raise Exception('test')

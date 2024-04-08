@@ -22,9 +22,3 @@ def divide(x,y):
     time.sleep(100)
     return x / y
 
-@after_setup_logger.connect()
-def on_after_setup_logger(logger, **kwargs):
-    formatter = logger.handlers[0].formatter
-    file_handler = logging.FileHandler('celery.log')
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
